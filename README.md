@@ -275,6 +275,44 @@ localhost:8080
 
 will work
 
+### Run with Maven
+
+```
+cd simple-4/HelloSpringBoot
+mvn spring-boot:run
+```
+
+```
+localhost:8080
+```
+
+### Run with Gradle
+
+* File
+* New
+* Spring Starter Project
+
+Uses `https://start.spring.ui`
+
+Name: HelloSpringBootGradle
+
+Type: Gradle (Buildship 3.x)
+
+Next>
+
+* Web
+	* Web
+
+Next >
+
+```
+cd HelloSpringBootGradle/
+./gradlew build
+./gradlew bootRun
+```
+
+works the same as Maven
+
 
 
 
