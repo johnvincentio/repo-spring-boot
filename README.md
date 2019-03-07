@@ -82,6 +82,34 @@ Set `ANT_HOME=/Users/jv/Desktop/OtherTools/apache-ant`
 ant -v
 ```
 
+## Install Tomcat
+
+[Apache Tomcat](http://tomcat.apache.org/)
+
+[Tomcat 9](https://tomcat.apache.org/download-90.cgi)
+
+* Download `apache-tomcat-9.0.16.tar.gz`
+* Download KEYS
+* Download PGP `apache-tomcat-9.0.16.tar.gz.asc`
+
+```
+gpg --import KEYS
+gpg --verify apache-tomcat-9.0.16.tar.gz.asc
+```
+
+```
+gunzip apache-tomcat-9.0.16.tar.gz
+```
+
+copy `apache-tomcat-9.0.16` to `/Users/jv/Desktop/OtherTools/apache-tomcat`
+
+In `.bash_profile`
+
+```
+alias start-tomcat=/Users/jv/Desktop/OtherTools/apache-tomcat/bin/startup.sh
+alias stop-tomcat=/Users/jv/Desktop/OtherTools/apache-tomcat/bin/shutdown.sh
+```
+
 ## Install Gradle
 
 [Gradle](https://gradle.org/)
@@ -150,7 +178,102 @@ spring run app.groovy
 http://localhost:8080/
 ```
 
+# Spring Initializr
 
+Multiple methods
+
+## Use Website
+
+`start.spring.io`
+
+* Maven Project
+* Java
+* 2.1.3
+* com.example
+* demo
+* demo
+* Jar
+
+Generate Project
+
+Downloads `demo.zip`
+
+Unzip and copy to `simple-2`
+
+## Use spring init
+
+```
+cd repo-spring-boot/simple-3
+spring init -list
+```
+
+```
+spring init -d=web my-app
+```
+
+```
+tree .
+```
+
+## Configure Finder to use STS
+
+`spring-tool-suite.workflow`
+
+```
+cd $1
+"/Applications/SpringToolSuite4.app/Contents/MacOS/SpringToolSuite4" -data $1 -showLocation $1
+```
+
+## Use STS
+
+Start `STS` from `repo-spring-boot/simple-4`
+
+* File
+* New
+* Spring Starter Project
+
+Uses `https://start.spring.ui`
+
+Name: HelloSpringBoot
+
+Next>
+
+* Web
+	* Web
+
+Next >
+
+### Run the Application
+
+* Select Main Java file
+* Run (top nav)
+* Spring Boot App
+
+Add `HomeController`
+
+```
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController {
+	
+	@RequestMapping("/")
+	public String home() {
+		return "Hello, Spring Boot";
+	}
+}
+```
+
+and run the application
+
+```
+localhost:8080
+```
+
+will work
 
 
 
