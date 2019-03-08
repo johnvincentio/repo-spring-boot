@@ -286,6 +286,21 @@ mvn spring-boot:run
 localhost:8080
 ```
 
+Create Jar
+
+```
+mvn clean package
+```
+
+Run the Jar
+
+```
+cd target
+java -jar {my-jar}.jar
+
+localhost:8080
+```
+
 ### Run with Gradle
 
 * File
@@ -313,6 +328,76 @@ cd HelloSpringBootGradle/
 
 works the same as Maven
 
+Notice Jar file in `build/libs`
 
+## Create Executable Jars
 
+Create a Jar
+
+```
+cd Boot/
+spring jar my-app.jar hello.groovy
+```
+
+List the Jar
+
+```
+jar tf my-app.jar
+```
+
+Run the Jar
+
+```
+java -jar my-app.jar
+
+localhost:8080
+```
+
+# Building Your First Real World Application
+
+```
+mkdir first-app
+```
+
+Start `STS` from `repo-spring-boot/first-app`
+
+* File
+* New
+* Spring Starter Project
+
+Uses `https://start.spring.ui`
+
+Name: HelloSpringBoot
+
+Next>
+
+* Web
+	* Web
+
+Next >
+
+Added 2 controllers.
+
+```
+mvn spring-boot:run
+```
+
+```
+localhost:8080
+```
+
+Create Jar
+
+```
+mvn clean package
+```
+
+Run the Jar
+
+```
+cd target
+java -jar {my-jar}.jar
+
+localhost:8080
+```
 
